@@ -24,7 +24,7 @@ RUN apt-get install --assume-yes --fix-missing sudo wget apt-utils xvfb xfce4 xb
 RUN apt-get install --assume-yes firefox
 
 # SPECIFY VARIABLES FOR SETTING UP CHROME REMOTE DESKTOP
-ARG USER=myuser
+ARG USER=boy
 ENV PIN=183183
 ENV CODE=4/0AeaYSHDUj_JnwZC4TZukLeeOsxFf506w9Ykl4i9NMaYjeWzAIoHjNFCTyB39FcbDPV275Q
 ENV HOSTNAME=desk1
