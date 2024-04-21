@@ -20,7 +20,7 @@ RUN apt-get update && apt-get upgrade --assume-yes && \
     apt-get install libutempter0
 
 # INSTALL FIREFOX
-RUN apt-get install --assume-yes firefox
+RUN apt-get install --assume-yes firefox-esr
 
 # INSTALL CHROME REMOTE DESKTOP
 RUN wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb && \
