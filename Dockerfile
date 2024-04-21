@@ -6,14 +6,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     python3-packaging python3-psutil python3-xdg \
     libcairo2 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 \
     libnspr4 libnss3 libpango-1.0-0 libutempter0 \
-    libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxtst6 sudo 
-
-    os.system("export DEBIAN_FRONTEND=noninteractive")
-        os.system("apt install --assume-yes xfce4 desktop-base xfce4-terminal")
-        os.system("bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'")
-        os.system("apt remove --assume-yes gnome-terminal")
-        os.system("apt install --assume-yes xscreensaver")
-        os.system("systemctl disable lightdm.service")
+    libxdamage1 libxfixes3 libxkbcommon0 libxrandr2 libxtst6 sudo
 
 RUN wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
 RUN dpkg -i chrome-remote-desktop_current_amd64.deb
