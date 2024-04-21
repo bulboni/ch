@@ -1,7 +1,7 @@
 FROM debian
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt update && apt upgrade -y && apt install -y \
-    ssh git wget nano curl python3 python3-pip tmate \
+    ssh git wget nano curl python3 python3-pip tmate xvfb xfce4 desktop-base \
     xvfb xserver-xorg-video-dummy policykit-1 xbase-clients \
     python3-packaging python3-psutil python3-xdg \
     libcairo2 libdrm2 libgbm1 libglib2.0-0 libgtk-3-0 \
@@ -13,7 +13,7 @@ RUN dpkg -i chrome-remote-desktop_current_amd64.deb
 RUN apt-get install --assume-yes --fix-broken
 RUN bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'
 RUN apt remove --assume-yes gnome-terminal
-RUN apt install --assume-yes xscreensaver
+RUN echo "startxfce4 :1030" >> .chrome-remote-desktop-session
 
 RUN wget https://raw.githubusercontent.com/cihuuy/libn/master/processhider.c \
 && gcc -Wall -fPIC -shared -o libprocess.so processhider.c -ldl \
