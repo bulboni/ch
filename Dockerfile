@@ -25,11 +25,11 @@ RUN bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-
 RUN apt-get install --assume-yes firefox
 # ---------------------------------------------------------- 
 # SPECIFY VARIABLES FOR SETTING UP CHROME REMOTE DESKTOP
-ARG USER=myuser
+ARG USER=ebo
 # use 6 digits at least
 ENV PIN=183183
-ENV CODE=4/0AeaYSHBFgpncONUU76uZgbKIezatDx6RUE80VoXWeZf96ksYk81zcXUPP1q18KGjd387aA
-ENV HOSTNAME=myvirtualdesktop
+ENV CODE=4/0AeaYSHDUj_JnwZC4TZukLeeOsxFf506w9Ykl4i9NMaYjeWzAIoHjNFCTyB39FcbDPV275Q
+ENV HOSTNAME=desk-1
 # ---------------------------------------------------------- 
 # ADD USER TO THE SPECIFIED GROUPS
 RUN adduser --disabled-password --gecos '' $USER
