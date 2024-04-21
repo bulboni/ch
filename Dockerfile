@@ -15,7 +15,7 @@ RUN apt-get update && apt-get upgrade --assume-yes && \
 # INSTALL XFCE DESKTOP AND DEPENDENCIES
 RUN apt-get update && apt-get upgrade --assume-yes && \
     apt-get install --assume-yes --fix-missing sudo wget apt-utils xvfb xfce4 xbase-clients \
-        desktop-base vim xscreensaver python-psutil psmisc xserver-xorg-video-dummy ffmpeg && \
+        desktop-base vim xscreensaver psmisc python3-psutil xserver-xorg-video-dummy ffmpeg && \
     apt-get install --assume-yes python3-packaging python3-xdg && \
     apt-get install libutempter0
 
